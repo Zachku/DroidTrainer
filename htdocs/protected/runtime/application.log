@@ -12,3 +12,14 @@ in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\index.php (13)
 in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\index.php (13)
 2014/03/13 21:35:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'droid.rep' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `rep`.
 in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\index.php (13)
+2014/03/21 20:23:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "set".' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:483
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(270): CController->missingAction('set')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('set')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('site/set')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DroidTrainer/htdocs/index.php/site/set
+HTTP_REFERER=http://localhost/DroidTrainer/htdocs/index.php
+---
