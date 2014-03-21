@@ -26,5 +26,6 @@ $this->menu=array(
 		'reps',
 		'wight',
 		'day_id',
+		'user_id',
 	),
 )); ?>

@@ -10,6 +10,7 @@
  *
  * The followings are the available model relations:
  * @property Day[] $days
+ * @property Set[] $sets
  */
 class User extends CActiveRecord
 {
@@ -46,6 +47,7 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'days' => array(self::HAS_MANY, 'Day', 'user_id'),
+			'sets' => array(self::HAS_MANY, 'Set', 'user_id'),
 		);
 	}
 
