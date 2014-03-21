@@ -71,7 +71,7 @@ class SetController extends Controller
 		{
 			$model->attributes=$_POST['Set'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->set_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class SetController extends Controller
 		{
 			$model->attributes=$_POST['Set'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->set_id));
 		}
 
 		$this->render('update',array(

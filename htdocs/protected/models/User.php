@@ -4,9 +4,12 @@
  * This is the model class for table "user".
  *
  * The followings are the available columns in table 'user':
- * @property integer $id
+ * @property integer $user_id
  * @property string $name
  * @property string $email
+ *
+ * The followings are the available model relations:
+ * @property Day[] $days
  */
 class User extends CActiveRecord
 {
@@ -30,7 +33,7 @@ class User extends CActiveRecord
 			array('name, email', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, email', 'safe', 'on'=>'search'),
+			array('user_id, name, email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,6 +45,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'days' => array(self::HAS_MANY, 'Day', 'user_id'),
 		);
 	}
 
@@ -51,7 +55,7 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'user_id' => 'User',
 			'name' => 'Name',
 			'email' => 'Email',
 		);
@@ -75,7 +79,7 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('email',$this->email,true);
 

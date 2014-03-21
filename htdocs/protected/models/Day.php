@@ -4,9 +4,13 @@
  * This is the model class for table "day".
  *
  * The followings are the available columns in table 'day':
- * @property integer $id
+ * @property integer $day_id
  * @property integer $user_id
  * @property string $date
+ *
+ * The followings are the available model relations:
+ * @property User $user
+ * @property Set[] $sets
  */
 class Day extends CActiveRecord
 {
@@ -30,7 +34,7 @@ class Day extends CActiveRecord
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, date', 'safe', 'on'=>'search'),
+			array('day_id, user_id, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,7 +46,8 @@ class Day extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'user_id' =>array(self::HAS_ONE, 'User', 'id')
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'sets' => array(self::HAS_MANY, 'Set', 'day_id'),
 		);
 	}
 
@@ -52,7 +57,7 @@ class Day extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'day_id' => 'Day',
 			'user_id' => 'User',
 			'date' => 'Date',
 		);
@@ -76,7 +81,7 @@ class Day extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('day_id',$this->day_id);
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('date',$this->date,true);
 

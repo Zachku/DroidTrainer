@@ -4,11 +4,15 @@
  * This is the model class for table "set".
  *
  * The followings are the available columns in table 'set':
- * @property integer $id
+ * @property integer $set_id
  * @property integer $exercise_id
  * @property integer $reps
  * @property integer $wight
  * @property integer $day_id
+ *
+ * The followings are the available model relations:
+ * @property Day $day
+ * @property Exercise $exercise
  */
 class Set extends CActiveRecord
 {
@@ -32,7 +36,7 @@ class Set extends CActiveRecord
 			array('exercise_id, reps, wight, day_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, exercise_id, reps, wight, day_id', 'safe', 'on'=>'search'),
+			array('set_id, exercise_id, reps, wight, day_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,8 +48,8 @@ class Set extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'exercise_id'=>array(self::HAS_ONE, 'Exercise', 'id'),
-                    'day_id'=>array(self::HAS_ONE, 'Day', 'id')
+			'day' => array(self::BELONGS_TO, 'Day', 'day_id'),
+			'exercise' => array(self::BELONGS_TO, 'Exercise', 'exercise_id'),
 		);
 	}
 
@@ -55,7 +59,7 @@ class Set extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'set_id' => 'Set',
 			'exercise_id' => 'Exercise',
 			'reps' => 'Reps',
 			'wight' => 'Wight',
@@ -81,7 +85,7 @@ class Set extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('set_id',$this->set_id);
 		$criteria->compare('exercise_id',$this->exercise_id);
 		$criteria->compare('reps',$this->reps);
 		$criteria->compare('wight',$this->wight);

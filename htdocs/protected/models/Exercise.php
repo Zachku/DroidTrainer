@@ -4,9 +4,12 @@
  * This is the model class for table "exercise".
  *
  * The followings are the available columns in table 'exercise':
- * @property integer $id
+ * @property integer $exercise_id
  * @property string $name
  * @property string $instruction
+ *
+ * The followings are the available model relations:
+ * @property Set[] $sets
  */
 class Exercise extends CActiveRecord
 {
@@ -30,7 +33,7 @@ class Exercise extends CActiveRecord
 			array('name', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, instruction', 'safe', 'on'=>'search'),
+			array('exercise_id, name, instruction', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,6 +45,7 @@ class Exercise extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'sets' => array(self::HAS_MANY, 'Set', 'exercise_id'),
 		);
 	}
 
@@ -51,7 +55,7 @@ class Exercise extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'exercise_id' => 'Exercise',
 			'name' => 'Name',
 			'instruction' => 'Instruction',
 		);
@@ -75,7 +79,7 @@ class Exercise extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('exercise_id',$this->exercise_id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('instruction',$this->instruction,true);
 

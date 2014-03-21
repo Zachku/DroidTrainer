@@ -71,7 +71,7 @@ class ExerciseController extends Controller
 		{
 			$model->attributes=$_POST['Exercise'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->exercise_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class ExerciseController extends Controller
 		{
 			$model->attributes=$_POST['Exercise'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->exercise_id));
 		}
 
 		$this->render('update',array(
