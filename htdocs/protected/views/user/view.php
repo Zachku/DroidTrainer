@@ -26,3 +26,13 @@ $this->menu=array(
 		'email',
 	),
 )); ?>
+
+<h2>Excercise Days</h2>
+<?php foreach ($days as $day) {
+    echo '<p>';
+    echo $day->date;
+    
+    echo  CHtml::link($day->date ,array('/day/view', 'id'=>$day->day_id));
+    echo '</p>';
+    
+}

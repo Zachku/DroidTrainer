@@ -48,7 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'set_id',
 		'exercise_id',
 		'reps',
-		'wight',
+		'weight',
 		'day_id',
 		'user_id',
 		array(

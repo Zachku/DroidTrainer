@@ -27,8 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'wight'); ?>
-		<?php echo $form->textField($model,'wight'); ?>
+		<?php echo $form->label($model,'weight'); ?>
+		<?php echo $form->textField($model,'weight'); ?>
 	</div>
 
 	<div class="row">

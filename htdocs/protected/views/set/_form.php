@@ -32,9 +32,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'wight'); ?>
-		<?php echo $form->textField($model,'wight'); ?>
-		<?php echo $form->error($model,'wight'); ?>
+		<?php echo $form->labelEx($model,'weight'); ?>
+		<?php echo $form->textField($model,'weight'); ?>
+		<?php echo $form->error($model,'weight'); ?>
 	</div>
 
 	<div class="row">

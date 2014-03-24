@@ -17,8 +17,8 @@
 	<?php echo CHtml::encode($data->reps); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('wight')); ?>:</b>
-	<?php echo CHtml::encode($data->wight); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('weight')); ?>:</b>
+	<?php echo CHtml::encode($data->weight); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('day_id')); ?>:</b>

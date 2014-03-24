@@ -26,3 +26,10 @@ $this->menu=array(
 		'date',
 	),
 )); ?>
+
+<?php 
+ foreach ($sets as $set) {
+    echo '<p>';
+    echo 'Set id: ', $set->set_id , " Exercise id: " , $set->exercise_id;
+    echo '</p>';
+}

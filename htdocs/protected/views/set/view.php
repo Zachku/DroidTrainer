@@ -24,7 +24,7 @@ $this->menu=array(
 		'set_id',
 		'exercise_id',
 		'reps',
-		'wight',
+		'weight',
 		'day_id',
 		'user_id',
 	),
