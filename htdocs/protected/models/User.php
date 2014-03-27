@@ -7,6 +7,7 @@
  * @property integer $user_id
  * @property string $name
  * @property string $email
+ * @property string $password
  *
  * The followings are the available model relations:
  * @property Day[] $days
@@ -30,11 +31,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, email', 'required'),
-			array('name, email', 'length', 'max'=>50),
+			array('name, email, password', 'required'),
+			array('name, email, password', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_id, name, email', 'safe', 'on'=>'search'),
+			array('user_id, name, email, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class User extends CActiveRecord
 			'user_id' => 'User',
 			'name' => 'Name',
 			'email' => 'Email',
+			'password' => 'Password',
 		);
 	}
 
@@ -84,6 +86,7 @@ class User extends CActiveRecord
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
