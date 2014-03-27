@@ -28,11 +28,11 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update', 'my_profile'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,11 +51,22 @@ class UserController extends Controller
 	 */
 	public function actionView($id)
 	{
+                $criteria = new CDbCriteria;
+                $criteria->addSearchCondition('user_id', $id);
+                $days = Day::model()->findAll($criteria);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+                        'days'=>$days,
 		));
 	}
-
+        public function actionMy_profile(){
+            $user_id = Yii::app()->user->getId();
+            
+            $criteria = new CDbCriteria;
+            $criteria->addSearchCondition('user_id', $user_id);
+            $days = Day::model()->findAll($criteria);
+            $this->render('my_profile', array('days'=>$days));
+        }
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

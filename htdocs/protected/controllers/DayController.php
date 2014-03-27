@@ -30,7 +30,7 @@ class DayController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update', 'create_new'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -48,13 +48,30 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        $sets = Set::model()->findAll('day_id=:'+$id);
+        $criteria = new CDbCriteria;
+        $criteria->addSearchCondition('day_id', $id);
+        $sets = Set::model()->findAll($criteria);
+
         $this->render('view', array(
             'model' => $this->loadModel($id),
             'sets' => $sets,
         ));
     }
-
+    
+    public function actionCreate_new(){
+        $date = date("Y-m-d");
+        $user_id = Yii::app()->user->id;
+        
+        $model = new Day;
+        $model->date = date("Y-m-d");
+        $model->user_id = Yii::app()->user->getId(); 
+        if(!$model->validate()) {
+            echo $model->date;
+            echo $model->user_id;
+        }
+        else if ($model->save())
+                $this->redirect(array('view', 'id' => $model->day_id));
+    }
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
