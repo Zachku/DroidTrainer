@@ -17,9 +17,12 @@ body
 
 #header
 {
+        color: #666666;
 	margin: 0;
-	padding: 0;
+	padding: 50px 0 50px 0;
 	border-top: 3px solid #C9E0ED;
+        text-align: center;
+        
 }
 
 #content
@@ -49,12 +52,12 @@ body
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background: #BCE774;
 }
 
 #mainmenu ul
 {
-	padding:6px 20px 5px 20px;
+	padding:14px 20px 15px 20px;
 	margin:0px;
 }
 
@@ -65,12 +68,12 @@ body
 
 #mainmenu ul li a
 {
-	color:#ffffff;
+	color: #666666;
 	background-color:transparent;
 	font-size:12px;
 	font-weight:bold;
 	text-decoration:none;
-	padding:5px 8px;
+	padding:15px 8px;
 }
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
@@ -250,4 +253,12 @@ div.search-form
     text-decoration: #555;
     color: #B7D6E7;
     background-color: #514721;
+}
+
+#addSetForm{
+    margin: 40px 10px;
+}
+
+#listOfExercises{
+    margin: 40px 10px;
 }

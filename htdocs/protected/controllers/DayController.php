@@ -50,7 +50,6 @@ class DayController extends Controller {
     public function actionView($id) {
         $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
         $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
-        $users = CHtml::listData(User::model()->findAll(), 'user_id', 'name');
         $set_model = new Set;
 
 
@@ -64,7 +63,6 @@ class DayController extends Controller {
             'sets' => $sets,
             'exercises' => $exercises,
             'days' => $days,
-            'users' => $users,
             'set_model' => $set_model,
             'this_day' => $id,
         ));
@@ -135,6 +133,7 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+        $set_model = $this->loadModel($id);
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

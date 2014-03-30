@@ -7,6 +7,7 @@ $this->breadcrumbs = array(
     $model->day_id,
 );
 
+/*
 $this->menu = array(
     array('label' => 'List Day', 'url' => array('index')),
     array('label' => 'Create Day', 'url' => array('create')),
@@ -14,6 +15,8 @@ $this->menu = array(
     array('label' => 'Delete Day', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->day_id), 'confirm' => 'Are you sure you want to delete this item?')),
     array('label' => 'Manage Day', 'url' => array('admin')),
 );
+ * */
+ 
 ?>
 
 <h1>Training day of  <?php echo $model->date; ?></h1>
@@ -22,7 +25,6 @@ $this->menu = array(
 $this->widget('zii.widgets.CDetailView', array(
     'data' => $model,
     'attributes' => array(
-        'day_id',
         'user_id',
         'date',
     ),
@@ -30,10 +32,10 @@ $this->widget('zii.widgets.CDetailView', array(
 ?>
 
 
-<h2>Add a new set for this day</h2>
-<div id="newSet">
-    <?php //$this->renderPartial('_form', array('model' => $model));  ?>
 
+<div id="addSetForm">
+    <?php //$this->renderPartial('_form', array('model' => $model));  ?>
+    <h2>Add a new set for this day</h2>
     <div class="form">
         <?php echo CHtml::beginForm('../set/create', 'post'); ?>
 
@@ -55,7 +57,7 @@ $this->widget('zii.widgets.CDetailView', array(
         </div>
         <div class="row"> 
             <?php echo CHtml::activeLabel($set_model, 'day_id'); ?>
-            <?php echo CHtml::activeTextField($set_model, 'day_id', array('value'=>$model->day_id, 'readonly' =>true, 'visible' => false)); ?> 
+            <?php echo CHtml::activeHiddenField($set_model, 'day_id', array('value' => $model->day_id, 'readonly' => true, 'visibility' => 'false')); ?> 
         </div>
         <div class="row"> 
             <?php echo CHtml::submitButton('Submit'); ?> 
@@ -63,17 +65,18 @@ $this->widget('zii.widgets.CDetailView', array(
         <?php echo CHtml::endForm(); ?>
     </div>
 </div>
-<h2>Exercises of day <?php echo $model->date; ?> </h2>
-<?php
-foreach ($sets as $set) {
-    echo '<p>';
-    echo "<b> Exercise name: ", $set->exercise->name, 
-            '</b> <br> Set id: ', $set->set_id, 
-            " Reps : ", $set->reps, 
-            " Weight: ", $set->weight, '<br>';
-    echo CHtml::link("Delete", '#', array(
-        'submit'=>array('set/delete', "id"=>$set->set_id, "returnUrl" => '../day/index' + $set->day_id), 
-        'confirm' => 'Are you sure you want to delete?'));
-    echo '</p>';
-}
-
+<div id="listOfExercises">
+    <h2>Exercises of day <?php echo $model->date; ?> </h2>
+    <?php
+    foreach ($sets as $set) {
+        echo '<p>';
+        echo "<b> Exercise name: ", $set->exercise->name,
+        '</b> <br> Set id: ', $set->set_id,
+        " Reps : ", $set->reps,
+        " Weight: ", $set->weight, '<br>';
+        echo CHtml::link("Delete", '#', array(
+            'submit' => array('set/delete', "id" => $set->set_id, "returnUrl" => '../day/index' + $set->day_id),
+            'confirm' => 'Are you sure you want to delete?'));
+        echo '</p>';
+    }?>
+</div>
