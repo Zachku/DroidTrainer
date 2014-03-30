@@ -30,11 +30,11 @@ class SetController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update', 'createForADay', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -53,22 +53,35 @@ class SetController extends Controller {
         ));
     }
 
+    public function actionCreateForADay($day_id) {
+        $model = new Set;
+        if (isset($_POST['Set'])) {
+            $model->attributes = $_POST['Set'];
+            if ($model->save())
+                $this->redirect(array('action' => day, 'view', 'id' => $model->set_id));
+        }
+        $day_id = $model->attributes = $_POST['Set'];
+        $this->render('day/' + $day_id);
+    }
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
         $model = new Set;
+        $model->user_id = Yii::app()->user->id;
+
         $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
         $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
         $users = CHtml::listData(User::model()->findAll(), 'user_id', 'name');
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-        print_r($model->attributes);
         if (isset($_POST['Set'])) {
+
             $model->attributes = $_POST['Set'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->set_id));
+                $this->redirect(array('day/view', 'id' => $model->day_id));
         }
 
         $this->render('create', array(
@@ -78,7 +91,7 @@ class SetController extends Controller {
             'users' => $users,
         ));
     }
-    
+
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -107,11 +120,13 @@ class SetController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+        $model = $this->loadModel($id);
+        $day_id = $model->day_id;
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('day/'+$day_id));
     }
 
     /**

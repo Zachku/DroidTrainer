@@ -30,11 +30,11 @@ class DayController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'create_new'),
+                'actions' => array('create', 'update', 'create_new', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -48,30 +48,44 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
+        $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
+        $users = CHtml::listData(User::model()->findAll(), 'user_id', 'name');
+        $set_model = new Set;
+
+
         $criteria = new CDbCriteria;
         $criteria->addSearchCondition('day_id', $id);
-        $sets = Set::model()->findAll($criteria);
+        $criteria->order='exercise.name';
+        $sets = Set::model()->with('exercise')->findAll($criteria);
 
         $this->render('view', array(
             'model' => $this->loadModel($id),
             'sets' => $sets,
+            'exercises' => $exercises,
+            'days' => $days,
+            'users' => $users,
+            'set_model' => $set_model,
+            'this_day' => $id,
         ));
     }
-    
-    public function actionCreate_new(){
+    /**
+     * Create new day from users own profile. 
+     */
+    public function actionCreate_new() {
         $date = date("Y-m-d");
         $user_id = Yii::app()->user->id;
-        
+
         $model = new Day;
         $model->date = date("Y-m-d");
-        $model->user_id = Yii::app()->user->getId(); 
-        if(!$model->validate()) {
+        $model->user_id = Yii::app()->user->getId();
+        if (!$model->validate()) {
             echo $model->date;
             echo $model->user_id;
-        }
-        else if ($model->save())
-                $this->redirect(array('view', 'id' => $model->day_id));
+        } else if ($model->save())
+            $this->redirect(array('view', 'id' => $model->day_id));
     }
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -125,7 +139,7 @@ class DayController extends Controller {
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('user/my_profile'));
     }
 
     /**

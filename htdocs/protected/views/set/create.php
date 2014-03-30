@@ -45,5 +45,3 @@ $this->menu = array(
     </div>
     <?php echo CHtml::endForm(); ?>
 </div>
-
-<?php echo Yii::app()->user->id; ?>

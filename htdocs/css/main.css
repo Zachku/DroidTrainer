@@ -227,3 +227,27 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+.days 
+{
+    list-style: none;
+}
+.days li
+{    
+    margin-bottom: 2px;
+    padding-bottom:  2px 0 2px;
+    background-color: #d3dfee;
+}
+
+.days li a
+{
+    text-decoration: none;
+    color: #444;
+}
+
+.days li a:hover
+{
+    text-decoration: #555;
+    color: #B7D6E7;
+    background-color: #514721;
+}

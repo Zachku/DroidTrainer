@@ -59,11 +59,17 @@ class UserController extends Controller
                         'days'=>$days,
 		));
 	}
+        
+        /**
+         * User's own profile
+         * 
+         */
         public function actionMy_profile(){
             $user_id = Yii::app()->user->getId();
             
             $criteria = new CDbCriteria;
             $criteria->addSearchCondition('user_id', $user_id);
+            $criteria->order = 'date';
             $days = Day::model()->findAll($criteria);
             $this->render('my_profile', array('days'=>$days));
         }
