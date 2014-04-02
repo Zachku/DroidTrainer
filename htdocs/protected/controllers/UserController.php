@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'create'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -36,7 +36,7 @@ class UserController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete', 'create'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -66,12 +66,18 @@ class UserController extends Controller
          */
         public function actionMy_profile(){
             $user_id = Yii::app()->user->getId();
-            
+            $condition = "user_id=" . $user_id;
+            $user = User::model()->find(array(
+                'condition' => $condition));
+                    
             $criteria = new CDbCriteria;
             $criteria->addSearchCondition('user_id', $user_id);
             $criteria->order = 'date';
             $days = Day::model()->findAll($criteria);
-            $this->render('my_profile', array('days'=>$days));
+            $this->render('my_profile', array(
+                'days'=>$days,
+                'user'=>$user,
+                ));
         }
 	/**
 	 * Creates a new model.

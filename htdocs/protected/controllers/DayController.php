@@ -30,11 +30,11 @@ class DayController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'create_new', 'delete'),
+                'actions' => array('update', 'create_new', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin'),
+                'actions' => array('admin', 'create'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -48,23 +48,31 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $model = $this->loadModel($id);
         $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
         $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
         $set_model = new Set;
-
+        
+        $username = User::model()->find();
 
         $criteria = new CDbCriteria;
         $criteria->addSearchCondition('day_id', $id);
         $criteria->order='exercise.name';
         $sets = Set::model()->with('exercise')->findAll($criteria);
-
+        
+        $criteria = new CDbCriteria;
+        $criteria->addSearchCondition('user_id', $model->user_id);
+        $criteria->select = 'name';
+        $username = User::model()->find($criteria);
+        
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $model,
             'sets' => $sets,
             'exercises' => $exercises,
             'days' => $days,
             'set_model' => $set_model,
             'this_day' => $id,
+            'username' => $username,
         ));
     }
     /**

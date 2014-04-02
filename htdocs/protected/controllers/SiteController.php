@@ -29,8 +29,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-                $users = User::model()->findAll();
-		$this->render('index', array('users' => $users));
+		$this->render('index', array());
 	}
 
 	/**

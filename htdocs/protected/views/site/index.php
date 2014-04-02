@@ -3,10 +3,8 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-<h1>All users</h1>
-<?php
-foreach($users as $user){
-    echo '<div>';
-    echo $user->name, " ", $user->email, " ", $user->user_id;
-    echo '</div>';
-}
+<h1>DroidTrainer</h1>
+<p>Tämä on Yii-frameworkilla rakennettu hiekkalaatikkosovellus. Sivuston pohjaideana on sovellus, 
+    jonka avulla käyttäjä pystyy pitämään kirjaa mm. kuntosalitreeneistä.</p>
+<p> Sivusto mahdollistaa autentikaation, eli käyttäjän rekisteröimisen ja kirjautumisen sivustolle </p>
+

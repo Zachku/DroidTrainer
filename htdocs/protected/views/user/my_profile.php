@@ -1,19 +1,46 @@
-<h1>My profile</h1>
-<h2>Edit your profile <?php echo Yii::app()->user->name; ?></h2>
-<div id="daylist">
-    <h2>Your training days</h2>
-    <ul class ="days">
-    <?php
-    foreach ($days as $day) { ?>
-        <li>
-        <?php echo CHtml::link($day->date, array('/day/view', 'id' => $day->day_id)), ' ',
-        CHtml::link("Delete", '#', array(
-        'submit'=>array('day/delete', "id"=>$day->day_id), 
-        'confirm' => 'Are you sure you want to delete?')); ?>
-        </li>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/myprofilejs.js', CClientScript::POS_END); ?>
+<h1>Welcome to your profile <font color="#BCE774"><?php echo $user->name; ?></h1></font> 
+<p>Here you can change your personal information, see all your training days listed and start and new training day.<p>
+<p>Please, enjoy your workout.<p>
+<h2>Your training days</h2>
+<table class ="days">
+    <tr> <th>Date</th> <th>Delete</th> </tr>
+    <?php foreach ($days as $day) { ?>
+        <tr>
+            <td><?php echo CHtml::link($day->date, array('/day/view', 'id' => $day->day_id)); ?></td>
+            <td><?php echo CHtml::link("Delete", '#', array(
+                'submit' => array('day/delete', "id" => $day->day_id),
+                'confirm' => 'Are you sure you want to delete?')); ?></td>
+        </tr>
     <?php }
     ?>
-    </ul>
-    <h2>Start a new training day <?php echo CHtml::link('here', array('/day/create_new')); ?> </h2>
+</table>
+
+<h2>Start a new training day <?php echo CHtml::link('here', array('/day/create_new')); ?> </h2>
+
+<h2>Edit your profile  <?php echo CHtml::link("here", "#", array('id' => 'editProfileLink')) ?> </h2>
+<div id="editProfile">
+    <div class="form">
+
+        <?php echo CHtml::button("Hide", array('id' => "hideEditProfile", 'type' => 'submit')); ?>
+        <?php echo CHtml::beginForm(array('user/update', 'id' => $user->user_id), 'post'); ?>
+        <div class="row"> 
+            <?php echo CHtml::activeLabel($user, 'name'); ?>
+            <?php echo CHtml::activeTextField($user, 'name', array('value' => $user->name)); ?> 
+        </div>
+        <div class="row"> 
+            <?php echo CHtml::activeLabel($user, 'email'); ?>
+            <?php echo CHtml::activeTextField($user, 'email', array('value' => $user->email)); ?> 
+        </div>
+        <div class="row"> 
+            <?php echo CHtml::activeLabel($user, 'password'); ?>
+            <?php echo CHtml::activePasswordField($user, 'password', array('value' => $user->password)); ?> 
+        </div>
+        <div class="row"> 
+            <?php echo CHtml::submitButton('Submit'); ?> 
+        </div>
+        <?php echo CHtml::endForm(); ?>
+    </div>
 </div>
+
 

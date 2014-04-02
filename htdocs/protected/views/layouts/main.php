@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
+        <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico" type="image/x-icon" /> 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -29,6 +29,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
+                                array('label'=>'Home', 'url'=>array('/site')),
                                 array('label'=>'My Profile', 'url'=>array('/user/my_profile'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'All users', 'url'=>array('/user')),
                                 array('label'=>'Exercises', 'url'=>array('/exercise')),

@@ -6,6 +6,7 @@ $this->breadcrumbs = array(
     'Exercises' => array('index'),
     $model->name,
 );
+/*
 if (!Yii::app()->user->isGuest) {
     $this->menu = array(
         array('label' => 'List Exercise', 'url' => array('index')),
@@ -15,6 +16,8 @@ if (!Yii::app()->user->isGuest) {
         array('label' => 'Manage Exercise', 'url' => array('admin')),
     );
 }
+ * 
+ */
 ?>
 
 <h1>View Exercise #<?php echo $model->exercise_id; ?></h1>

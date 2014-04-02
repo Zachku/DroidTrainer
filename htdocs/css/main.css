@@ -1,3 +1,5 @@
+/*006363	134A4A	004040	2CB1B1	50B1B1*/
+
 body
 {
 	margin: 0;
@@ -5,8 +7,12 @@ body
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: #EFEFEF;
+        
 }
-
+a {
+    text-decoration: none;
+    color: #2CB1B1;
+}
 #page
 {
 	margin-top: 5px;
@@ -17,17 +23,18 @@ body
 
 #header
 {
-        color: #666666;
+        color: white;
 	margin: 0;
 	padding: 50px 0 50px 0;
 	border-top: 3px solid #C9E0ED;
         text-align: center;
-        
+        background-color: #006363;
 }
 
 #content
 {
     padding: 20px;
+    min-height: 600px;
 }
 
 #sidebar
@@ -52,7 +59,7 @@ body
 
 #mainmenu
 {
-	background: #BCE774;
+	background: #5CCCCC;
 }
 
 #mainmenu ul
@@ -231,30 +238,39 @@ div.search-form
 	background: #80CFFF;
 }
 
-.days 
+table 
 {
-    list-style: none;
+    width: 75%;
 }
-.days li
-{    
-    margin-bottom: 2px;
-    padding-bottom:  2px 0 2px;
-    background-color: #d3dfee;
-}
-
-.days li a
+table a
 {
+    width: 50%;
     text-decoration: none;
-    color: #444;
+    color: #264409;
+    padding: 10px 10px;
+}
+table td
+{    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #33CCCC;
+    border-style: solid;
+    
 }
 
-.days li a:hover
+table th
+{
+    
+    background-color: #006363;
+    color: white;
+    padding: 10px 15px;
+}
+table a:hover
 {
     text-decoration: #555;
     color: #B7D6E7;
-    background-color: #514721;
+    background-color: #006363;
 }
-
 #addSetForm{
     margin: 40px 10px;
 }
@@ -262,3 +278,45 @@ div.search-form
 #listOfExercises{
     margin: 40px 10px;
 }
+
+input[type=submit] {
+	
+	background-color:#2CB1B1;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #2CB1B1;
+	display:inline-block;
+	color:#006363;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:10px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #50B1B1 ;
+}
+input[type=submit]:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}input[type=submit]:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+/*006363 134A4A	004040	2CB1B1	50B1B1*/
