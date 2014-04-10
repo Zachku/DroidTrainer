@@ -18,7 +18,7 @@
  * */
 ?>
 
-<h1><?php echo $username->name; ?>'s training day  <?php echo $model->date; ?></h1>
+<h1><b class="username"><?php echo $username->name; ?>'s</b> training day  <?php echo $model->date; ?></h1>
 
 <?php
 /*

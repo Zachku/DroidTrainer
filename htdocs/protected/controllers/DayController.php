@@ -49,32 +49,36 @@ class DayController extends Controller {
      */
     public function actionView($id) {
         $model = $this->loadModel($id);
-        $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
-        $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
-        $set_model = new Set;
-        
-        $username = User::model()->find();
+        if ($model->user_id == $user_id = Yii::app()->user->id) {
+            $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
+            $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
+            $set_model = new Set;
 
-        $criteria = new CDbCriteria;
-        $criteria->addSearchCondition('day_id', $id);
-        $criteria->order='exercise.name';
-        $sets = Set::model()->with('exercise')->findAll($criteria);
-        
-        $criteria = new CDbCriteria;
-        $criteria->addSearchCondition('user_id', $model->user_id);
-        $criteria->select = 'name';
-        $username = User::model()->find($criteria);
-        
-        $this->render('view', array(
-            'model' => $model,
-            'sets' => $sets,
-            'exercises' => $exercises,
-            'days' => $days,
-            'set_model' => $set_model,
-            'this_day' => $id,
-            'username' => $username,
-        ));
+            $username = User::model()->find();
+
+            $criteria = new CDbCriteria;
+            $criteria->addSearchCondition('day_id', $id);
+            $criteria->order = 'exercise.name';
+            $sets = Set::model()->with('exercise')->findAll($criteria);
+
+            $criteria = new CDbCriteria;
+            $criteria->addSearchCondition('user_id', $model->user_id);
+            $criteria->select = 'name';
+            $username = User::model()->find($criteria);
+
+            $this->render('view', array(
+                'model' => $model,
+                'sets' => $sets,
+                'exercises' => $exercises,
+                'days' => $days,
+                'set_model' => $set_model,
+                'this_day' => $id,
+                'username' => $username,
+            ));
+        }
+        else throw new CHttpException(404,'Sorry, page could not be found');
     }
+
     /**
      * Create new day from users own profile. 
      */
@@ -153,9 +157,9 @@ class DayController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Day');
+        $days = Day::model()->findAll("user_id=".Yii::app()->user->id);
         $this->render('index', array(
-            'dataProvider' => $dataProvider,
+            'days' => $days,
         ));
     }
 

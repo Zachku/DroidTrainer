@@ -16,7 +16,14 @@ $this->menu=array(
 
 <h1>Days</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<table>
+    <tr><th>Date</th><th>Id</th></tr>
+    <?php foreach ($days as $day) {?>
+    <tr>
+        <td><?php echo $day->date; ?></td>
+        <td><?php echo $day->day_id; ?></td>
+    </tr>
+    <?php }?>
+    
+    
+</table>

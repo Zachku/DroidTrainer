@@ -23,6 +23,7 @@
 <div class="container" id="page">
 
 	<div id="header">
+                <?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/logo.png', "Trainer")?>
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
