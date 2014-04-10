@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends Controller {
+class OwnExerciseController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -26,15 +26,15 @@ class UserController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'create', 'view_user_as_a_quest'),
+                'actions' => array('index', 'view'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('update', 'my_profile'),
+                'actions' => array('create', 'update', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -48,32 +48,8 @@ class UserController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        $criteria = new CDbCriteria;
-        $criteria->addSearchCondition('user_id', $id);
-        $days = Day::model()->findAll($criteria);
         $this->render('view', array(
             'model' => $this->loadModel($id),
-            'days' => $days,
-        ));
-    }
-
-    /**
-     * User's own profile
-     * 
-     */
-    public function actionMy_profile() {
-        $user_id = Yii::app()->user->getId();
-        $condition = "user_id=" . $user_id;
-        $user = User::model()->find(array(
-            'condition' => $condition));
-
-        $criteria = new CDbCriteria;
-        $criteria->addSearchCondition('user_id', $user_id);
-        $criteria->order = 'date';
-        $days = Day::model()->findAll($criteria);
-        $this->render('my_profile', array(
-            'days' => $days,
-            'user' => $user,
         ));
     }
 
@@ -82,20 +58,16 @@ class UserController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new User;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        $model = new OwnExercise;
+        $model->name = $_POST['name'];
+        $model->user_id = Yii::app()->user->id;
+        $model->instruction = $_POST['instruction'];
 
-        if (isset($_POST['User'])) {
-            $model->attributes = $_POST['User'];
-            if ($model->save())
-                $this->redirect(array('site/login'));
-        }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
+        if ($model->validate()) {
+            $model->save();
+            $this->redirect(array('exercise/index'));
+        } else $this->redirect(array('exercise/index', 'error' => 'Check your input'));
     }
 
     /**
@@ -109,10 +81,10 @@ class UserController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['User'])) {
-            $model->attributes = $_POST['User'];
+        if (isset($_POST['OwnExercise'])) {
+            $model->attributes = $_POST['OwnExercise'];
             if ($model->save())
-                $this->redirect(array('my_profile'));
+                $this->redirect(array('view', 'id' => $model->own_exercise_id));
         }
 
         $this->render('update', array(
@@ -125,22 +97,26 @@ class UserController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
-        $this->loadModel($id)->delete();
-
+    public function actionDelete() {
+        $id = $_POST['id'];
+        echo $id;
+        $model = $this->loadModel($id);
+        if($model->user_id == Yii::app()->user->id){
+            $this->loadModel($id)->delete();
+        }
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(array('exercise/index'));
     }
+    
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        //$dataProvider=new CActiveDataProvider('User');
-        $users = User::model()->findAll();
+        $dataProvider = new CActiveDataProvider('OwnExercise');
         $this->render('index', array(
-            'users' => $users,
+            'dataProvider' => $dataProvider,
         ));
     }
 
@@ -148,20 +124,13 @@ class UserController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new User('search');
+        $model = new OwnExercise('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['User']))
-            $model->attributes = $_GET['User'];
+        if (isset($_GET['OwnExercise']))
+            $model->attributes = $_GET['OwnExercise'];
 
         $this->render('admin', array(
             'model' => $model,
-        ));
-    }
-
-    public function actionView_user_as_a_quest($id) {
-        $user = User::model()->findByPk($id);
-        $this->render('view_user_as_a_quest', array(
-            'user' => $user,
         ));
     }
 
@@ -169,11 +138,11 @@ class UserController extends Controller {
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
-     * @return User the loaded model
+     * @return OwnExercise the loaded model
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = User::model()->findByPk($id);
+        $model = OwnExercise::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -181,10 +150,10 @@ class UserController extends Controller {
 
     /**
      * Performs the AJAX validation.
-     * @param User $model the model to be validated
+     * @param OwnExercise $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'user-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'own-exercise-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

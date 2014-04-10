@@ -1,26 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "own_exercise".
  *
- * The followings are the available columns in table 'user':
+ * The followings are the available columns in table 'own_exercise':
+ * @property integer $own_exercise_id
  * @property integer $user_id
  * @property string $name
- * @property string $email
- * @property string $password
+ * @property string $instruction
  *
  * The followings are the available model relations:
- * @property Day[] $days
- * @property Set[] $sets
+ * @property User $user
  */
-class User extends CActiveRecord
+class OwnExercise extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'user';
+		return 'own_exercise';
 	}
 
 	/**
@@ -31,11 +30,12 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, email, password', 'required'),
-			array('name, email, password', 'length', 'max'=>50),
+			array('user_id, name, instruction', 'required'),
+			array('user_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_id, name, email, password', 'safe', 'on'=>'search'),
+			array('own_exercise_id, user_id, name, instruction', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,9 +47,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'days' => array(self::HAS_MANY, 'Day', 'user_id'),
-			'sets' => array(self::HAS_MANY, 'Set', 'user_id'),
-                        'own_exercises' => array(self::HAS_MANY, 'OwnExercise', 'user_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -59,10 +57,10 @@ class User extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'own_exercise_id' => 'Own Exercise',
 			'user_id' => 'User',
 			'name' => 'Name',
-			'email' => 'Email',
-			'password' => 'Password',
+			'instruction' => 'Instruction',
 		);
 	}
 
@@ -84,10 +82,10 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('own_exercise_id',$this->own_exercise_id);
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
+		$criteria->compare('instruction',$this->instruction,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -98,7 +96,7 @@ class User extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return OwnExercise the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

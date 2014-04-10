@@ -50,7 +50,7 @@ class DayController extends Controller {
     public function actionView($id) {
         $model = $this->loadModel($id);
         if ($model->user_id == $user_id = Yii::app()->user->id) {
-            $exercises = CHtml::listData(Exercise::model()->findAll(), 'exercise_id', 'name');
+            $exercises = CHtml::listData(Exercise::model()->findAll(array('condition'=>'user_id IS NULL OR user_id='.Yii::app()->user->id)), 'exercise_id', 'name');
             $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
             $set_model = new Set;
 
@@ -76,7 +76,7 @@ class DayController extends Controller {
                 'username' => $username,
             ));
         }
-        else throw new CHttpException(404,'Sorry, page could not be found');
+        else throw new CHttpException(404,'Sorry, page could not be found...');
     }
 
     /**

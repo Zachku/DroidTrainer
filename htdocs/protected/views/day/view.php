@@ -41,6 +41,7 @@
         <div class="row"> 
             <?php echo CHtml::activeLabel($set_model, 'exercise_id'); ?>
             <?php echo CHtml::activeDropDownList($set_model, 'exercise_id', $exercises, array('prompt' => 'Choose exercise:')); ?> 
+            <p>If there is no exercise you need, you can add more <?php echo CHtml::link('here', array('exercise/index')); ?></p>
         </div>
         <div class="row"> 
             <?php echo CHtml::activeLabel($set_model, 'reps'); ?>

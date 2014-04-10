@@ -32,9 +32,9 @@
 			'items'=>array(
                                 array('label'=>'Home', 'url'=>array('/site')),
                                 array('label'=>'My Profile', 'url'=>array('/user/my_profile'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label'=>'All users', 'url'=>array('/user')),
-                                array('label'=>'Exercises', 'url'=>array('/exercise')),
-                                array('label'=>'Days', 'url'=>array('/day')),
+                                array('label'=>'Our registered trainers', 'url'=>array('/user')),
+                                array('label'=>'Exercises', 'url'=>array('/exercise'), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label'=>'My Training Days', 'url'=>array('/day'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'Register', 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest)

@@ -16,12 +16,11 @@ $this->menu=array(
 
 <h1>Days</h1>
 
-<table>
-    <tr><th>Date</th><th>Id</th></tr>
+<table class='dayList'>
+    <tr><th>Date</th></tr>
     <?php foreach ($days as $day) {?>
     <tr>
-        <td><?php echo $day->date; ?></td>
-        <td><?php echo $day->day_id; ?></td>
+        <td><?php echo CHtml::link($day->date, array('day/view', 'id'=>$day->day_id)); ?></td>
     </tr>
     <?php }?>
     
