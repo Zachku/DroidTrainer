@@ -18,6 +18,8 @@
 
 <h2>Start a new training day <?php echo CHtml::link('here', array('/day/create_new')); ?> </h2>
 
+<h2>View charts of your workout <?php echo CHtml::link('here', array('/user/chart')); ?> </h2>
+
 <h2>Edit your profile  <?php echo CHtml::link("here", "", array('id' => 'editProfileLink')); ?> </h2>
 <div class="editProfile">
     <div class="form">
