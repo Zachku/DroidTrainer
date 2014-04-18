@@ -30,7 +30,7 @@ class UserController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('update', 'my_profile'),
+                'actions' => array('update', 'my_profile', 'chart', 'updateChart', 'updateWeight'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -163,6 +163,79 @@ class UserController extends Controller {
         $this->render('view_user_as_a_quest', array(
             'user' => $user,
         ));
+    }
+
+    public function actionChart() {
+        $exercises = CHtml::listData(Exercise::model()->findAll(array(
+                            'condition' => 'user_id IS NULL OR user_id=' . Yii::app()->user->id)), 'exercise_id', 'name');
+        $set_model = new Set;
+        if (isset($_POST['Set']['exercise_id'])) {
+            $exercise = $_POST['Set']['exercise_id'];
+        } else {
+            $exercise = 3;
+        }
+
+        $weights = CHtml::listData(Set::model()->findAll(array(
+                            'condition' => 'user_id=' . Yii::app()->user->id . ' AND exercise_id=' . $exercise)), 'weight', 'weight');
+        if (isset($_POST['Set']['weight'])) {
+            $weight = $_POST['Set']['weight'];
+        } else {
+            $weight = 10;
+        }
+
+        $id = Yii::app()->user->id;
+        $raw_data = Set::model()->with('day')->findAll(array(
+            'condition' => 'day.user_id=' . $id . ' AND exercise_id=' . $exercise,
+            'select' => 'reps,weight',
+        ));
+
+        $data[] = array('weight', 'reps');
+        foreach ($raw_data as $raw) {
+            $data[] = array('', intval($raw->reps));
+        }
+        $this->render('chart', array(
+            'data' => $data,
+            'exercises' => $exercises,
+            'set_model' => $set_model,
+            'weights' => $weights,
+        ));
+    }
+    public function actionUpdateWeight(){
+        $set_model = new Set;
+        $exercise = $_POST['Set']['exercise_id'];
+        $weights = CHtml::listData(Set::model()->findAll(array(
+                            'condition' => 'user_id=' . Yii::app()->user->id . ' AND exercise_id=' . $exercise)), 'weight', 'weight');
+        $this->renderPartial('_weight', array(
+            'weights' => $weights,
+            'set_model' => $set_model,)
+                , false, false);
+        
+    }
+    public function actionUpdateChart() {
+
+        if (isset($_POST['Set']['exercise_id'])) {
+            $exercise = $_POST['Set']['exercise_id'];
+        } else {
+            $exercise = 3;
+        }
+        if (isset($_POST['Set']['weight'])) {
+            $weight = $_POST['Set']['weight'];
+        } else {
+            $weight = 10;
+        }
+
+        $id = Yii::app()->user->id;
+
+        $raw_data = Set::model()->with('day')->findAll(array(
+            'condition' => 'day.user_id=' . $id . ' AND exercise_id=' . $exercise,
+            'select' => 'reps,weight',
+        ));
+        $data[] = array('weight', 'reps');
+        foreach ($raw_data as $raw) {
+            $data[] = array('', intval($raw->reps));
+        }
+        $this->renderPartial('_chart', array(
+            'data' => $data), false, false);
     }
 
     /**

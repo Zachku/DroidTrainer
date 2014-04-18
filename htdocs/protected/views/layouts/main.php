@@ -29,15 +29,17 @@
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
+                        'encodeLabel'=>false,
 			'items'=>array(
-                                array('label'=>'Home', 'url'=>array('/site')),
+                                array('label'=>'<img src="'.Yii::app()->request->baseUrl.'/images/kuva2.png" />', 'url'=>array('/site')),
                                 array('label'=>'My Profile', 'url'=>array('/user/my_profile'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'Our registered trainers', 'url'=>array('/user')),
                                 array('label'=>'Exercises', 'url'=>array('/exercise'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'My Training Days', 'url'=>array('/day'), 'visible'=>!Yii::app()->user->isGuest),
                                 array('label'=>'Register', 'url'=>array('/user/create'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-                                array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest)
+                                array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                                array('label'=>'Chart', 'url'=>array('/user/chart'), 'visible'=>!Yii::app()->user->isGuest)
                             ),
 		)); ?>
 	</div><!-- mainmenu -->
