@@ -60,6 +60,7 @@ class Day extends CActiveRecord
 			'day_id' => 'Day',
 			'user_id' => 'User',
 			'date' => 'Date',
+                        'is_public' => 'Is_public'
 		);
 	}
 

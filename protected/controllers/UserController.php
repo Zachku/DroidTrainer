@@ -78,19 +78,29 @@ class UserController extends Controller {
     }
 
     /**
-     * Creates a new model.
+     * Uuden käyttäjän luonti. Jos syöte on validi, kirjataan käyttäjä suraan sisään ja ohjataan my_profile-sivulle
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
         $model = new User;
+        $loginModel = new LoginForm;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
-            if ($model->save())
-                $this->redirect(array('site/login'));
+            $tmpPw = $model->password;
+            $model->password = User::model()->hashPassword($model->password);
+            if ($model->save()) {
+                $loginModel['username'] = $model['name'];
+                $loginModel['password'] = $tmpPw;
+                if ($loginModel->validate() && $loginModel->login()) {
+                    $this->redirect(array('user/my_profile'));
+                } else {
+                    $this->redirect(array('site/login'));
+                }
+            }
         }
 
         $this->render('create', array(
@@ -159,8 +169,10 @@ class UserController extends Controller {
     }
 
     public function actionView_user_as_a_quest($id) {
+        $public_training_days = Day::model()->findAll(array('condition'=>'user_id='.$id. ' AND is_public=TRUE'));
         $user = User::model()->findByPk($id);
         $this->render('view_user_as_a_quest', array(
+            'public_training_days' => $public_training_days,
             'user' => $user,
         ));
     }
@@ -200,7 +212,8 @@ class UserController extends Controller {
             'weights' => $weights,
         ));
     }
-    public function actionUpdateWeight(){
+
+    public function actionUpdateWeight() {
         $set_model = new Set;
         $exercise = $_POST['Set']['exercise_id'];
         $weights = CHtml::listData(Set::model()->findAll(array(
@@ -209,8 +222,8 @@ class UserController extends Controller {
             'weights' => $weights,
             'set_model' => $set_model,)
                 , false, false);
-        
     }
+
     public function actionUpdateChart() {
 
         if (isset($_POST['Set']['exercise_id'])) {

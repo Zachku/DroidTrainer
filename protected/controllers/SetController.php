@@ -30,11 +30,11 @@ class SetController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'createForADay', 'delete'),
+                'actions' => array('update', 'createForADay', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin'),
+                'actions' => array('admin', 'create',),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -55,13 +55,16 @@ class SetController extends Controller {
 
     public function actionCreateForADay($day_id) {
         $model = new Set;
-        if (isset($_POST['Set'])) {
-            $model->attributes = $_POST['Set'];
-            if ($model->save())
-                $this->redirect(array('action' => day, 'view', 'id' => $model->set_id));
+        $day = Day::model()->findByPk($day_id);
+        if (Yii::app()->user->id == $day->user_id) {
+            $model->user_id = Yii::app()->user->id;
+            if (isset($_POST['Set'])) {
+                $model->attributes = $_POST['Set'];
+                if ($model->save())
+                    $this->redirect(array('day/view', 'id' => $day_id));
+            }
+            $this->redirect(array('day/view', 'id' => $day_id));
         }
-        $day_id = $model->attributes = $_POST['Set'];
-        $this->render('day/' + $day_id);
     }
 
     /**
@@ -123,7 +126,7 @@ class SetController extends Controller {
         $model = $this->loadModel($id);
         $day_id = $model->day_id;
         $this->loadModel($id)->delete();
-        
+
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(array('day/view', 'id' => $day_id));

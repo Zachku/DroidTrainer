@@ -1,42 +1,20 @@
-<?php
-/* @var $this DayController */
-/* @var $model Day */
-/*
-  $this->breadcrumbs = array(
-  'Days' => array('index'),
-  $model->day_id,
-  );
 
-
-  $this->menu = array(
-  array('label' => 'List Day', 'url' => array('index')),
-  array('label' => 'Create Day', 'url' => array('create')),
-  array('label' => 'Update Day', 'url' => array('update', 'id' => $model->day_id)),
-  array('label' => 'Delete Day', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->day_id), 'confirm' => 'Are you sure you want to delete this item?')),
-  array('label' => 'Manage Day', 'url' => array('admin')),
-  );
- * */
-?>
 
 <h1><b class="username"><?php echo $username->name; ?>'s</b> training day  <?php echo $model->date; ?></h1>
 
-<?php
-/*
-  $this->widget('zii.widgets.CDetailView', array(
-  'data' => $model,
-  'attributes' => array(
-  'username',
-  'date',
-  ),
-  ));
- */
-?>
+<div id ="day_sharing">
+<?php if(!$model->is_public) {?>
+    <p> This day is private. Share this day <?php echo CHtml::ajaxLink('here', array('day/set_public', 'id' => $model->day_id), array('update' => '#day_sharing')); ?>
+<?php } else { ?>
+    <p> This day is public. Set this day private <?php echo CHtml::ajaxLink('here', array('day/set_public', 'id' => $model->day_id), array('update' => '#day_sharing')); ?>
+<?php }?>
+</div>
 
 
 <div id="addSetForm">
     <h2>Add a new set for this day</h2>
     <div class="form">
-        <?php echo CHtml::beginForm(array('set/create'), 'post'); ?>
+        <?php echo CHtml::beginForm(array('set/createForADay', 'day_id' => $model->day_id), 'post'); ?>
 
         <div class="row"> 
             <?php echo CHtml::activeLabel($set_model, 'exercise_id'); ?>

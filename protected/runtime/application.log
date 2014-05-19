@@ -12976,3 +12976,999 @@ Stack trace:
 REQUEST_URI=/DroidTrainer/htdocs/index.php/user/updateWeight
 in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\protected\controllers\UserController.php (210)
 in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\htdocs\index.php (13)
+2014/04/20 11:05:50 [error] [php] Undefined variable: POST (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php:95)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): UserController->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/DroidTrainer/index.php/user/create
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (95)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/20 11:21:50 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "login".' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(227): CComponent->__call('login', Array)
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(96): CActiveRecord->__call('login', Array)
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(96): User->login()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(49): UserController->actionCreate()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/create')
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/DroidTrainer/index.php/user/create
+HTTP_REFERER=http://localhost/DroidTrainer/index.php/user/create
+---
+2014/04/20 11:35:31 [error] [php] Trying to get property of non-object (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\user\my_profile.php:3)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): UserController->renderPartial()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(77): UserController->render()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(49): UserController->actionMy_profile()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): UserController->runAction()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): UserController->filterAccessControl()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): UserController->runActionWithFilters()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): UserController->run()
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/DroidTrainer/index.php/user/my_profile
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\user\my_profile.php (3)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (77)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/20 14:43:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('set_public')
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/set_public')
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/set_public?0=8
+HTTP_REFERER=http://localhost/DroidTrainer/index.php/day/8
+---
+2014/04/20 17:22:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('public_view')
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/public_view')
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/public_view/2
+HTTP_REFERER=http://localhost/DroidTrainer/index.php/user/view_user_as_a_quest/1
+---
+2014/04/20 17:23:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('public_view')
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/public_view')
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/public_view/2
+HTTP_REFERER=http://localhost/DroidTrainer/index.php/user/view_user_as_a_quest/1
+---
+2014/04/20 17:24:00 [error] [php] Undefined variable: model (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\day\public_view.php:3)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): DayController->renderFile()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): DayController->renderPartial()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(92): DayController->render()
+#3 unknown(0): DayController->actionPublic_view()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): DayController->runAction()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): DayController->filterAccessControl()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): DayController->runActionWithFilters()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): DayController->run()
+#15 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/DroidTrainer/index.php/day/public_view/2
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\day\public_view.php (3)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php (92)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/20 17:37:11 [error] [php] Undefined variable: user (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\day\public_view.php:3)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): DayController->renderFile()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): DayController->renderPartial()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(93): DayController->render()
+#3 unknown(0): DayController->actionPublic_view()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): DayController->runAction()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): DayController->filterAccessControl()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): DayController->runActionWithFilters()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): DayController->run()
+#15 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/DroidTrainer/index.php/day/public_view/2
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\views\day\public_view.php (3)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php (93)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:48:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=2 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:48:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=2 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('2')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/2
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:49:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:49:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('1')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/1
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:49:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=5 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:49:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=5 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('5')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/5
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:49:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=9 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:49:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=9 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('9')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/9
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:49:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:49:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('1')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/1
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:49:23 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('7')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/7
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:50:51 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('7')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/7
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:50:53 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('7')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/7
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:50:57 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('7')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/7
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:52:24 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('7')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/7
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:52:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE.
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php (170)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/25 18:52:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_public' in 'where clause'. The SQL statement executed was: SELECT * FROM `day` `t` WHERE user_id=1 AND is_public=TRUE' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\UserController.php(170): CActiveRecord->findAll(Array)
+#4 [internal function]: UserController->actionView_user_as_a_quest('1')
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view_user_as_a_...')
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view_user_...')
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/droidtrainer/index.php/user/view_user_as_a_quest/1
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user
+---
+2014/04/25 18:52:48 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('6')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/6
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/25 18:54:13 [error] [exception.CException] exception 'CException' with message 'Property "Day.is_public" is not defined.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\db\ar\CActiveRecord.php(145): CComponent->__get('is_public')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php(5): CActiveRecord->__get('is_public')
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(126): require('C:\Users\Juho\D...')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\Juho\D...', Array, true)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\Juho\D...', Array, true)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): CController->render('view', Array)
+#7 [internal function]: DayController->actionView('6')
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#20 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/droidtrainer/index.php/day/6
+HTTP_REFERER=http://localhost/droidtrainer/index.php/user/my_profile
+---
+2014/04/27 22:13:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('6')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/droidtrainer/index.php/day/6
+---
+2014/04/27 22:13:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('createForADay')
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('set/createForAD...')
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/droidtrainer/index.php/set/createForADay
+HTTP_REFERER=http://localhost/droidtrainer/index.php/day/6
+---
+2014/04/27 22:13:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:336
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('createForADay')
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('set/createForAD...')
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/droidtrainer/index.php/set/createForADay
+HTTP_REFERER=http://localhost/droidtrainer/index.php/day/6
+---
+2014/04/27 22:14:41 [error] [php] Undefined variable: day_id (C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php:17)
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): DayController->renderFile()
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): DayController->renderPartial()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): DayController->render()
+#3 unknown(0): DayController->actionView()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): DayController->runAction()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): DayController->filterAccessControl()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): DayController->runActionWithFilters()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): DayController->run()
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/day/6
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php (17)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php (77)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:16:05 [error] [php] Undefined variable: day_id (C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php:17)
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(869): DayController->renderFile()
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): DayController->renderPartial()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php(77): DayController->render()
+#3 unknown(0): DayController->actionView()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): DayController->runAction()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): DayController->filterAccessControl()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): DayController->runActionWithFilters()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): DayController->run()
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/day/6
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\views\day\view.php (17)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php (77)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:16:54 [error] [exception.CException] exception 'CException' with message 'SetController cannot find the requested view "6".' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:878
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial(6, NULL, true)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): CController->render(6)
+#2 [internal function]: SetController->actionCreateForADay('6')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SetController), Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SetController), Object(ReflectionMethod), Array)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('createForADay')
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('set/createForAD...')
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+HTTP_REFERER=http://localhost/droidtrainer/index.php/day/6
+---
+2014/04/27 22:17:54 [error] [exception.CException] exception 'CException' with message 'SetController cannot find the requested view "day/6".' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:878
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('day/6', NULL, true)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): CController->render('day/6')
+#2 [internal function]: SetController->actionCreateForADay('6')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SetController), Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SetController), Object(ReflectionMethod), Array)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('createForADay')
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('set/createForAD...')
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+HTTP_REFERER=http://localhost/droidtrainer/index.php/day/6
+---
+2014/04/27 22:17:58 [error] [exception.CException] exception 'CException' with message 'SetController cannot find the requested view "day/6".' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:878
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): CController->renderPartial('day/6', NULL, true)
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): CController->render('day/6')
+#2 [internal function]: SetController->actionCreateForADay('6')
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SetController), Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SetController), Object(ReflectionMethod), Array)
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('createForADay')
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('set/createForAD...')
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+HTTP_REFERER=http://localhost/droidtrainer/index.php/day/6
+---
+2014/04/27 22:19:02 [error] [php] strpos() expects parameter 1 to be string, array given (C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:706)
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(867): SetController->getViewFile()
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): SetController->renderPartial()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): SetController->render()
+#3 unknown(0): SetController->actionCreateForADay()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (63)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:19:49 [error] [php] strpos() expects parameter 1 to be string, array given (C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:706)
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(867): SetController->getViewFile()
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): SetController->renderPartial()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): SetController->render()
+#3 unknown(0): SetController->actionCreateForADay()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (63)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:19:53 [error] [php] strpos() expects parameter 1 to be string, array given (C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php:706)
+Stack trace:
+#0 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(867): SetController->getViewFile()
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(782): SetController->renderPartial()
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php(63): SetController->render()
+#3 unknown(0): SetController->actionCreateForADay()
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#15 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=6
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (63)
+in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:20:44 [error] [php] Use of undefined constant day - assumed 'day' (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php:63)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=1
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (63)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:34:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('1')
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/droidtrainer/index.php/day/1
+---
+2014/04/27 22:35:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('1')
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/droidtrainer/index.php/day/1
+---
+2014/04/27 22:42:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('1')
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/droidtrainer/index.php/day/1
+---
+2014/04/27 22:42:45 [error] [php] Trying to get property of non-object (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php:59)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=10
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (59)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:46:52 [error] [php] Trying to get property of non-object (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php:59)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=10
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (59)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:48:26 [error] [php] Trying to get property of non-object (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php:59)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=10
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (59)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/04/27 22:53:03 [error] [php] Creating default object from empty value (C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php:60)
+Stack trace:
+#0 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): SetController->runAction()
+#3 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): SetController->filterAccessControl()
+#6 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): SetController->runActionWithFilters()
+#9 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): SetController->run()
+#10 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php(13): CWebApplication->run()
+REQUEST_URI=/droidtrainer/index.php/set/createForADay?day_id=10
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\protected\controllers\SetController.php (60)
+in C:\Users\juho\Dropbox\htdocs\DroidTrainer\index.php (13)
+2014/05/02 21:33:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('22')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/22
+---
+2014/05/02 21:34:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('22')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/22
+---
+2014/05/02 21:34:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('21')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/21
+---
+2014/05/02 21:34:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sorry, page could not be found...' in C:\Users\Juho\Dropbox\htdocs\DroidTrainer\protected\controllers\DayController.php:80
+Stack trace:
+#0 [internal function]: DayController->actionView('20')
+#1 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DayController), Array)
+#2 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DayController), Object(ReflectionMethod), Array)
+#3 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\web\CWebApplication.php(141): CWebApplication->runController('day/view')
+#13 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Juho\Dropbox\htdocs\DroidTrainer\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/DroidTrainer/index.php/day/20
+---

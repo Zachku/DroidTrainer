@@ -4,8 +4,8 @@ $(document).ready(function() {
 });
 
 $("#editProfileLink").live('click', function() {
-    $(".editProfile").fadeIn();
-});
-$("#hideEditProfile").live('click', function() {
-    $(".editProfile").fadeOut();
+    if ($(".editProfile").is(":hidden"))
+        $(".editProfile").fadeIn();
+    else
+        $(".editProfile").fadeOut();
 });

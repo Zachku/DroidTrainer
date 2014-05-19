@@ -30,7 +30,7 @@ class DayController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('update', 'create_new', 'delete'),
+                'actions' => array('update', 'create_new', 'delete', 'set_public', 'public_view'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -50,7 +50,7 @@ class DayController extends Controller {
     public function actionView($id) {
         $model = $this->loadModel($id);
         if ($model->user_id == $user_id = Yii::app()->user->id) {
-            $exercises = CHtml::listData(Exercise::model()->findAll(array('condition'=>'user_id IS NULL OR user_id='.Yii::app()->user->id)), 'exercise_id', 'name');
+            $exercises = CHtml::listData(Exercise::model()->findAll(array('condition' => 'user_id IS NULL OR user_id=' . Yii::app()->user->id)), 'exercise_id', 'name');
             $days = CHtml::listData(Day::model()->findAll(), 'day_id', 'date');
             $set_model = new Set;
 
@@ -76,7 +76,25 @@ class DayController extends Controller {
                 'username' => $username,
             ));
         }
-        else throw new CHttpException(404,'Sorry, page could not be found...');
+        else
+            throw new CHttpException(404, 'Sorry, page could not be found...');
+    }
+
+    public function actionPublic_view($id) {
+        $model = $this->loadModel($id);
+        if ($model->is_public == true) {
+            $user = User::model()->findByPk($model->user_id);
+            $criteria = new CDbCriteria;
+            $criteria->addSearchCondition('day_id', $id);
+            $criteria->order = 'exercise.name';
+            $sets = Set::model()->with('exercise')->findAll($criteria);
+            $this->render('public_view', array(
+                'model' => $model,
+                'user' => $user,
+                'sets' => $sets,
+            ));
+        }
+        
     }
 
     /**
@@ -96,25 +114,42 @@ class DayController extends Controller {
             $this->redirect(array('view', 'id' => $model->day_id));
     }
 
+    public function actionSet_public($id) {
+        $day = Day::model()->findByPk($id);
+        if ($day->user_id == Yii::app()->user->id) {
+            if ($day->is_public == false)
+                $day->is_public = true;
+            else
+                $day->is_public = false;
+            $day->save();
+            $this->renderPartial('_day_sharing', array(
+            'model' => $day), false, false);
+            //$this->redirect(array('day/view', 'id' => $id));
+        }
+    }
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new Day;
+        /*
+          $model = new Day;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+          // Uncomment the following line if AJAX validation is needed
+          // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Day'])) {
-            $model->attributes = $_POST['Day'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->day_id));
-        }
+          if (isset($_POST['Day'])) {
+          $model->attributes = $_POST['Day'];
+          if ($model->save())
+          $this->redirect(array('view', 'id' => $model->day_id));
+          }
 
-        $this->render('create', array(
-            'model' => $model,
-        ));
+          $this->render('create', array(
+          'model' => $model,
+          ));
+         * 
+         */
     }
 
     /**
@@ -123,20 +158,22 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $model = $this->loadModel($id);
+        if (Yii::app()->user->id == Day::model()->findByPk($id)) {
+            $model = $this->loadModel($id);
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+            // Uncomment the following line if AJAX validation is needed
+            // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Day'])) {
-            $model->attributes = $_POST['Day'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->day_id));
+            if (isset($_POST['Day'])) {
+                $model->attributes = $_POST['Day'];
+                if ($model->save())
+                    $this->redirect(array('view', 'id' => $model->day_id));
+            }
+
+            $this->render('update', array(
+                'model' => $model,
+            ));
         }
-
-        $this->render('update', array(
-            'model' => $model,
-        ));
     }
 
     /**
@@ -145,19 +182,21 @@ class DayController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        $set_model = $this->loadModel($id);
-        $this->loadModel($id)->delete();
+        if (Yii::app()->user->id == Day::model()->findByPk($id)) {
+            $set_model = $this->loadModel($id);
+            $this->loadModel($id)->delete();
 
-        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('user/my_profile'));
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('user/my_profile'));
+        }
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        $days = Day::model()->findAll("user_id=".Yii::app()->user->id);
+        $days = Day::model()->findAll("user_id=" . Yii::app()->user->id);
         $this->render('index', array(
             'days' => $days,
         ));
